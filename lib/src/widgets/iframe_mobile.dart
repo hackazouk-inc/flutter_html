@@ -15,7 +15,6 @@ class IframeContentElement extends ReplacedElement {
   final double? width;
   final double? height;
   final NavigationDelegate? navigationDelegate;
-  final UniqueKey key = UniqueKey();
 
   IframeContentElement({
     required String name,
@@ -68,16 +67,8 @@ class _WebViewWidgetState extends State<_WebViewWidget> {
   @override
   void initState() {
     super.initState();
-    if (webview.WebViewPlatform.instance is WebKitWebViewPlatform) {
-      params = WebKitWebViewControllerCreationParams(
-        allowsInlineMediaPlayback: true,
-        mediaTypesRequiringUserAction: const <PlaybackMediaTypes>{},
-      );
-    } else {
-      params = const webview.PlatformWebViewControllerCreationParams();
-    }
-
-    controller = webview.WebViewController.fromPlatformCreationParams(params);
+   
+    controller = webview.WebViewController();
 
     final sandboxMode = widget.attributes["sandbox"];
 

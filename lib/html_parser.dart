@@ -7,6 +7,7 @@ import 'package:csslib/visitor.dart' as css;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_html/deprecated_text_theme_extensions.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_html/image_render.dart';
 import 'package:flutter_html/src/anchor.dart';
